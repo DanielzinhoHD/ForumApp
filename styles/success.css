@@ -1,0 +1,33 @@
+.container{
+    margin: 60px;
+
+    height: 70vh;
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    font-size: 20rem;
+}
+
+h2{
+    position: absolute;
+    color: rgb(99, 107, 116);
+
+    text-shadow: 0 0 2px rgba(0, 0, 0, 1);
+    text-align: center;
+}
+
+.link{
+    text-decoration: none;
+
+    color: red;
+}
+
+.link:hover{
+    text-decoration: underline;
+}

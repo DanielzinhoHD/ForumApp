@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+html, body{
+    display: flex;
+    height: auto;
+    width: 100%;
+    margin: 0;
+
+    font-family: 'Open Sans', sans-serif;
+
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    background-attachment: fixed;
+}
+
+.offset{
+    padding-top: 66px;
+
+    width: 100%;
+
+    z-index: 1;
+}
+
+/* Nav bar styles; */
+nav{
+    position: fixed;
+
+    width: 100%;
+
+    box-shadow: 0px 1px 90px 5px black;
+
+    backdrop-filter: blur(3px);
+
+    z-index: 2;
+}
+
+.nav-bg{
+    position: fixed;
+    width: 100%;
+    height: 82px;
+
+    z-index: 2;
+
+    background-color: rgba(9, 10, 15, 0.6);
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 82px;
+
+    padding: 0;
+    margin: 0;
+
+}
+
+nav ul li{
+    height: 100%;
+
+    list-style-type: none;
+    user-select: none;
+    cursor: pointer;
+
+    font-size: 1.3rem;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li:first-child{
+    font-size: 2.3rem;
+    margin-right: 30vw;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    z-index: 3;
+
+    transition: 0.2s ease;
+}
+
+nav ul li:not(:first-child) a:hover{
+    color: rgb(137, 139, 151);
+    text-decoration: underline;
+    /* border-bottom: 2px solid white; */
+}
+
+.dropdown{
+    position: absolute;
+    visibility: hidden;
+    opacity: 0%;
+    z-index: 1;
+
+    background-color: rgba(18, 24, 33, 0.7);
+
+    padding: 10px 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    width: max-content;
+    height: max-content;
+
+    text-align: center;
+
+    transition: 0.2s ease;
+
+    top: 60%;
+}
+
+nav ul li:hover .dropdown{
+    visibility: visible;
+    opacity: 100%;
+
+    top: 100%;
+}
+
+.dropdown:hover{
+    visibility: visible;
+    opacity: 100%;
+
+    top: 100%;
+}
+
+.topic-list{
+    visibility: hidden;
+    opacity: 0%;
+    transition: 0.2s ease;
+
+    position: absolute;
+    top: 60%;
+    left: 0;
+    z-index: 1;
+
+    width: 100vw;
+    background-color: rgba(18, 24, 33, 0.8);
+    backdrop-filter: blur(3px);
+
+    padding: 15px 20px;
+    
+    display: flex;
+
+    cursor: default;
+}
+
+nav ul li:hover .topic-list{
+    visibility: visible;
+    opacity: 100%;
+
+    top: 100%;
+}
+
+.topic-item{
+    margin: 0px 20px;
+    font-size: 1rem;
+}
+
+nav li form{
+    z-index: 3;
+
+    display: flex;
+
+    /* position: relative; */
+}
+
+nav li form input{
+    width: 150px;
+
+    padding: 10px;
+    padding-bottom: 0;
+    padding-left: 5px;
+
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+
+    outline: none;
+    color: white;
+    transition: 0.1s ease;
+}
+
+nav li form input:focus{
+    border-bottom: 2px solid rgb(0, 81, 255);
+}
+
+nav li form input:focus ~ button{
+    border: 2px solid rgb(0, 81, 255);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+nav li form button{
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 10px;
+    
+    color: white;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+nav li form button:hover{
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+.navbar-suggestions{
+    position: absolute;
+    top: 100%;
+    max-width: 300px;
+    margin-right: 30px;
+
+    background-color: white;
+
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.navbar-suggestion{
+    padding: 1px 15px;
+    margin: 0;
+    width: 100%;
+
+    color: rgb(118, 118, 118) !important;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+.navbar-suggestion:hover{
+    background-color: rgb(230, 230, 230);
+}
+
+.navbar-suggestion:last-child:hover{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.navbar-suggestion p{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-size: 1rem;
+    margin: 8px 0px;
+}
+
+.navbar-suggestion-link{
+    width: 100%;
+}
+
+.separator{
+    padding: 5px 10px;
+    background-color: rgba(102, 102, 102, 0.3);
+
+    color: rgb(70, 70, 70) !important;
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    cursor: default;
+}

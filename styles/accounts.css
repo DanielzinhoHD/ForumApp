@@ -1,0 +1,91 @@
+.container{
+    margin: 40px;
+    padding: 20px;
+    border-radius: 10px;
+
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+h2{
+    color: white;
+}
+
+p{
+    margin: 0;
+}
+
+.account{
+    display: flex;
+    align-items: center;
+
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+
+    background-color: rgba(0, 0, 0, 0.2);
+
+    width: 25vw;
+
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+.account-container{
+    width: 100%;   
+}
+
+.account-body{
+    display: flex;
+    justify-content: space-between;
+}
+
+.account-feet{
+    display: flex;
+    justify-content: space-between;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+img{
+    border-radius: 50%;
+    border: 2px solid white;
+
+    height: 65px;
+    width: 65px;
+
+    margin-right: 5px;
+}
+
+.account-list{
+    color: white;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.account-list a, .account-list a:hover, .account-list a:focus, .account-list a:active{
+    margin: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.account-list a:hover .account{
+    background-color: rgba(255, 255, 255, 0.01);
+    
+    border: 2px solid rgb(0, 70, 221);
+}
+
+.search{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    margin-bottom: 20px;
+    outline: none;
+
+    color: white;
+    font-size: 1.2rem;
+}
+
+.search::placeholder{
+    color: rgb(177, 177, 177);
+}

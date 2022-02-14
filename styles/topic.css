@@ -1,0 +1,139 @@
+.container{
+    margin: 60px;
+}
+
+.topic-name{
+    color: white;
+
+    text-align: center;
+
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+h2{
+    color: white;
+}
+
+.topic{
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+}
+
+.topic-title{
+    color: white;
+
+    padding-left: 10px;
+}
+
+.item:last-child .horizontal{
+    display: none;
+}
+
+.item-container{
+    display: flex;
+
+    /* border-bottom: 1px solid white; */
+    color: white;
+
+    padding: 10px;
+}
+
+.posts .item-container a{
+    display: flex;
+
+    width: 100%;
+
+    text-decoration: none;
+    color: white;
+}
+
+.item:last-child{
+    border-bottom: 0px;
+}
+
+.item a{
+    height: 65px;
+}
+
+.comment-link{
+    width: 88%;
+
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
+}
+
+.comment-link h3{
+    color: white;
+}
+
+.item img{
+    height: 65px;
+
+    margin-right: 10px;
+}
+
+.item .subject{
+    width: 70%;
+}
+
+.posts .item-container .subject{
+    padding-left: 10px;
+    width: 85%;
+}
+
+.item .subject .title{
+    margin: 0;
+    margin-top: 5px;
+}
+
+.item .subject .text{
+    color: rgba(255, 255, 255, 0.6);
+    padding-right: 10px;
+
+    margin-top: 5px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.horizontal{
+    background-image: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0));
+    border: none;
+
+    width: 80%;
+    min-height: 1.1px;
+}
+
+.details{
+    display: flex;
+
+    flex-direction: column;
+    /* align-items: center; */
+    text-align: center;
+    justify-content: center;
+}
+
+.details p{
+    margin: 0px;
+}
+
+.details .comments{
+    color:darkgrey
+}
+
+.details .date{
+    color:darkgrey
+}
+
+.user a img{
+    height: 75px;
+}

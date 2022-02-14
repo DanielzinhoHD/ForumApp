@@ -1,0 +1,95 @@
+.posts{
+    margin: 70px;
+}
+
+.topic{
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+}
+
+.topic-title{
+    color: white;
+
+    padding-left: 10px;
+}
+
+.item:last-child .horizontal{
+    display: none;
+}
+
+.item-container{
+    display: flex;
+
+    /* border-bottom: 1px solid white; */
+    color: white;
+    text-decoration: none;
+
+    padding: 10px;
+}
+
+.item:last-child{
+    border-bottom: 0px;
+}
+
+.item a{
+    height: 65px;
+}
+
+.item img{
+    border-radius: 50%;
+    border: 3px solid white;
+
+    height: 65px;
+
+    margin-right: 10px;
+}
+
+.item .subject{
+    width: 100%;
+}
+
+.item .subject .title{
+    margin: 0;
+    margin-top: 5px;
+}
+
+.item .subject .text{
+    margin-top: 5px;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.horizontal{
+    background-image: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0));
+    border: none;
+
+    width: 80%;
+    min-height: 1px;
+}
+
+.details{
+    display: flex;
+
+    flex-direction: column;
+    /* align-items: center; */
+    text-align: center;
+    justify-content: center;
+}
+
+.details p{
+    margin: 0px;
+}
+
+.details .comments{
+    color:darkgrey
+}
+
+.details .date{
+    color:darkgrey
+}

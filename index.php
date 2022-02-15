@@ -2,6 +2,7 @@
     include_once './defaults/header.php';
     include_once './defaults/navbar.php';
 ?>
+<title>Home</title>
 
 <?php 
     session_start();

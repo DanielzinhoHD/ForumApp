@@ -22,7 +22,7 @@
                 <a href="">Topics</a>
                 <div class="topic-list">
                     <?php 
-                        include_once '../includes/dbh.inc.php';
+                        include_once './includes/dbh.inc.php';
 
                         $sql = 'SELECT DISTINCT topics.id, topics.name FROM topics INNER JOIN posts ON topics.id = posts.id_topic WHERE deleted = 0';
 

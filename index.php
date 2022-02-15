@@ -1,6 +1,10 @@
 <?php 
     include_once './defaults/header.php';
+    try{
     include_once './defaults/navbar.php';
+    }catch(Exception $e){
+        print_r($e);
+    }
 ?>
 <title>Home</title>
 

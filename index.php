@@ -1,4 +1,7 @@
-<?php include_once './defaults/header.php';?>
+<?php 
+    include_once './defaults/header.php';
+    include_once './defaults/navbar.php';
+?>
 
 <?php 
     session_start();
@@ -10,7 +13,6 @@
 ?>
 
 <body>
-<?php include_once './defaults/navbar.php';?>
 
     <div class="offset">
     

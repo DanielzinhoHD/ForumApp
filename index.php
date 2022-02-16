@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include_once './includes/dbh.inc.php';?>
+
+
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,70 +13,76 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
     crossorigin="anonymous">
     </script> 
-    <link rel="stylesheet" href="styles/defaults.css">
-    <link rel="stylesheet" href="styles/index.css">
-    <title>Forum App - Home</title>
+
+    <link rel="stylesheet" href="./styles/defaults.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>Home</title>
+
 </head>
 
 <?php 
     session_start();
     if(isset($_SESSION['deleted'])){
         if($_SESSION['deleted'] === 1){
-            header("location: ../includes/logout.inc.php");
+
+            header("location: ./includes/logout.inc.php");
+
         }
     }
 ?>
 
 <body>
-<nav>
-<div class="nav-bg"></div>
-<ul>
-    <li><a href="../index.php"><i class="far fa-newspaper"></i></a></li>
-    <li><a href="../index.php">Home</a></li>
-    <li>
-        <a href="">Topics</a>
-        <div class="topic-list">
-            <?php 
-                include_once '../includes/dbh.inc.php';
 
-                $sql = 'SELECT DISTINCT topics.id, topics.name FROM topics INNER JOIN posts ON topics.id = posts.id_topic WHERE deleted = 0';
+    <nav>
+        <div class="nav-bg"></div>
+        <ul>
+            <li><a href="./index.php"><i class="far fa-newspaper"></i></a></li>
+            <li><a href="./index.php">Home</a></li>
+            <li>
+                <a href="">Topics</a>
+                <div class="topic-list">
+                    <?php 
+                        include_once './includes/dbh.inc.php';
 
-                foreach($dbh->query($sql) as $row){ 
-                    echo '<div class="topic-item"><a href="../views/topic.php?id='.$row['id'].'">'.$row["name"].'</a></div>';
-                };
+                        $sql = 'SELECT DISTINCT topics.id, topics.name FROM topics INNER JOIN posts ON topics.id = posts.id_topic WHERE deleted = 0';
 
-            ?>
-        </div>
-    </li>
-    <li>
-        <?php 
-            if(isset($_SESSION['id'])){
-                echo '<a href="">'.ucfirst($_SESSION['name']).'</a>';
-                echo '<div class="dropdown">
-                    <a href="../views/add-post.php">Create post</a>';
-                if($_SESSION['adm'] === 0){
-                    echo '<a href="../views/profile.php">Profile</a>';
-                }
-                if($_SESSION['adm'] === 1){
-                    echo '<a href="../views/accounts.php">Account list</a>';
-                }
-                echo '<a href="../includes/logout.inc.php">Log out</a>
-                </div>';
-            }else{
-                echo '<a href="../views/enter.php">Enter</a>';
-            }
-        ?>
-        </li>
-    <li>
-        <form action="../views/results.php" method="GET">
-            <input name="search" placeholder="Search..." autocomplete="off">
-            <button type="button"><i class="fa fa-search"></i></button>
-        </form>
-        <div class="navbar-suggestions"></div>
-    </li>
-</ul>
-</nav>
-<script src="./scripts/searchbar.js"></script>
+                        foreach($dbh->query($sql) as $row){ 
+                            echo '<div class="topic-item"><a href="./views/topic.php?id='.$row['id'].'">'.$row["name"].'</a></div>';
+                        };
+
+                    ?>
+                </div>
+            </li>
+            <li>
+                <?php 
+                    if(isset($_SESSION['id'])){
+                        echo '<a href="">'.ucfirst($_SESSION['name']).'</a>';
+                        echo '<div class="dropdown">
+                            <a href="./views/add-post.php">Create post</a>';
+                        if($_SESSION['adm'] === 0){
+                            echo '<a href="./views/profile.php">Profile</a>';
+                        }
+                        if($_SESSION['adm'] === 1){
+                            echo '<a href="./views/accounts.php">Account list</a>';
+                        }
+                        echo '<a href="./includes/logout.inc.php">Log out</a>
+                        </div>';
+                    }else{
+                        echo '<a href="./views/enter.php">Enter</a>';
+                    }
+                ?>
+                </li>
+            <li>
+                <form action="./views/results.php" method="GET">
+                    <input name="search" placeholder="Search..." autocomplete="off">
+                    <button type="button"><i class="fa fa-search"></i></button>
+                </form>
+                <div class="navbar-suggestions"></div>
+            </li>
+        </ul>
+    </nav>
+    <script src="./scripts/searchbar.js"></script>
+
 
     <div class="offset">
     

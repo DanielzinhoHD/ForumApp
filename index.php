@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,21 +13,26 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
     crossorigin="anonymous">
     </script> 
+
     <link rel="stylesheet" href="./styles/defaults.css">
     <link rel="stylesheet" href="./styles/index.css">
     <title>Home</title>
+
 </head>
 
 <?php 
     session_start();
     if(isset($_SESSION['deleted'])){
         if($_SESSION['deleted'] === 1){
+
             header("location: ./includes/logout.inc.php");
+
         }
     }
 ?>
 
 <body>
+
     <nav>
         <div class="nav-bg"></div>
         <ul>
@@ -75,6 +82,7 @@
         </ul>
     </nav>
     <script src="./scripts/searchbar.js"></script>
+
 
     <div class="offset">
     

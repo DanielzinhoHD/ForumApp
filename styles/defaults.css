@@ -43,20 +43,24 @@ nav{
     background-color: rgba(9, 10, 15, 0.6);
 }
 
-nav ul{
+.nav-container{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
 
     height: 82px;
 
-    padding: 0;
     margin: 0;
-
 }
 
-nav ul li{
+.nav-container ul{
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+}
+
+.nav-container ul li{
     height: 100%;
+    margin: 0px 20px;
 
     list-style-type: none;
     user-select: none;
@@ -70,12 +74,36 @@ nav ul li{
     justify-content: center;
 }
 
-nav ul li:first-child{
-    font-size: 2.3rem;
-    margin-right: 30vw;
+.nav-container ul li label{
+    cursor: pointer;
 }
 
-nav ul li a{
+.nav-container ul li:not(:last-child){
+    z-index: 3;
+}
+
+.nav-container ul li input[type='checkbox']{
+    display: none;
+}
+
+.nav-icon{
+    position: relative;
+    font-size: 3.2rem;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-left: 10px;
+
+    z-index: 5;
+}
+
+.nav-icon a{
+    color: white;
+}
+
+.nav-container li a{
     text-decoration: none;
     color: white;
 
@@ -83,15 +111,12 @@ nav ul li a{
     display: flex;
     align-items: center;
 
-    z-index: 3;
-
     transition: 0.2s ease;
 }
 
-nav ul li:not(:first-child) a:hover{
+.nav-container ul li a:hover{
     color: rgb(137, 139, 151);
     text-decoration: underline;
-    /* border-bottom: 2px solid white; */
 }
 
 .dropdown{
@@ -116,7 +141,7 @@ nav ul li:not(:first-child) a:hover{
     top: 60%;
 }
 
-nav ul li:hover .dropdown{
+.nav-container li input[type='checkbox']:checked ~ .dropdown{
     visibility: visible;
     opacity: 100%;
 
@@ -151,7 +176,7 @@ nav ul li:hover .dropdown{
     cursor: default;
 }
 
-nav ul li:hover .topic-list{
+.nav-container li input[type='checkbox']:checked ~ .topic-list{
     visibility: visible;
     opacity: 100%;
 
@@ -163,7 +188,7 @@ nav ul li:hover .topic-list{
     font-size: 1rem;
 }
 
-nav li form{
+.nav-container li form{
     z-index: 3;
 
     display: flex;
@@ -171,7 +196,7 @@ nav li form{
     /* position: relative; */
 }
 
-nav li form input{
+.nav-container li form input{
     width: 150px;
 
     padding: 10px;
@@ -188,16 +213,16 @@ nav li form input{
     transition: 0.1s ease;
 }
 
-nav li form input:focus{
+.nav-container li form input:focus{
     border-bottom: 2px solid rgb(0, 81, 255);
 }
 
-nav li form input:focus ~ button{
+.nav-container li form input:focus ~ button{
     border: 2px solid rgb(0, 81, 255);
     background-color: rgba(255, 255, 255, 0.05);
 }
 
-nav li form button{
+.nav-container li form button{
     background-color: transparent;
     border: 2px solid white;
     padding: 10px;
@@ -207,7 +232,7 @@ nav li form button{
     transition: 0.1s ease;
 }
 
-nav li form button:hover{
+.nav-container li form button:hover{
     background-color: rgba(255, 255, 255, 0.07);
 }
 
@@ -266,4 +291,127 @@ nav li form button:hover{
     font-weight: 700;
 
     cursor: default;
+}
+
+.bars{
+    display: none !important;
+    font-size: 2rem !important;
+    align-items: center;
+    z-index: 5;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.responsive{
+    position: relative;
+    display: flex;
+}
+
+.responsive ul:not(:last-child){
+    display: block;
+}
+
+@media (max-width: 750px) {
+    .nav-container ul li{
+        margin: 0px 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-container li a, .nav-container li form input, 
+    .nav-container li form button{
+        transition: none;
+    }
+    .nav-container{
+        display: block;
+    }
+    .nav-container ul:not(:last-child){
+        position: absolute;
+        top: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 10px;
+    }
+    .nav-container ul{
+        display: block;
+        margin: 0;
+    }
+    .nav-container ul li:not(:last-child){
+        /* display: none; */
+        visibility: hidden;
+    }
+    .nav-container ul li:last-child{
+        display: flex !important;
+        align-items: center;
+    }
+    .responsive ul li:not(:last-child){
+        visibility: visible;
+
+        display: block !important;
+        background-color: rgb(18, 24, 33);
+        padding: 15px;
+        margin: 0;
+    }
+    .bars{
+        display: block !important;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .nav-container ul li:not(:last-child){
+        position: relative;
+    }
+
+    .responsive .dropdown{
+        transition: none;
+    }
+
+    .responsive .topic-list{
+        transition: none;
+        display: block;
+    }
+
+    .responsive .topic-item{
+        font-size: 1.3rem;
+        padding: 5px 0px;
+        margin: 0;
+    }
+
+    .responsive .dropdown a{
+        padding: 5px 0px;
+    }
+
+    .responsive .topic-item a, .responsive .dropdown a{
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .responsive li input[type='checkbox']:checked ~ .dropdown{
+        width: 100%;
+        display: block;
+        position: inherit;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .responsive li input[type='checkbox']:checked ~ .topic-list{
+        position: inherit;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .responsive ul li label{
+        display: flex;
+    }
+    
+    .responsive form, .responsive form input{
+        width: 100% !important;
+    }
+    
+    .responsive button{
+        display: none;
+    }
 }

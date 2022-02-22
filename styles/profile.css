@@ -14,9 +14,6 @@
 }
 
 .btn-box{
-    
-    margin-left: 20%;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -25,6 +22,7 @@
 
 .btn-box form{
     display: flex;
+    text-align: center;
 }
 
 .delete{
@@ -33,6 +31,7 @@
 
     color: white;
     font-size: 1.2rem;
+    min-width: 100%;
 
     background-color: red;
 
@@ -50,6 +49,7 @@ input[type='file']{
 
 .btn-box label{
     background-color: rgb(0, 34, 109);
+    min-width: 150px;
 
     color: white;
 
@@ -77,7 +77,7 @@ input[type='file']{
     background-color: rgba(0, 0, 0, 0.2);
     user-select: none;
 
-    min-width: 30vw;
+    min-width: 330px;
 }
 
 .account-container{
@@ -120,7 +120,9 @@ img{
     border: 2px solid white;
     border-radius: 10px;
 
-    width: 46%;
+    width: 45%;
+
+    display: flex;
 
     transition: 0.1s ease;
 }
@@ -134,6 +136,8 @@ img{
 .post a, .post a:hover, .post a:focus, .post a:active{
     color: white;
     text-decoration: none;
+
+    width: 100%;
 
     display: flex;
     justify-content: space-between;
@@ -288,4 +292,25 @@ img{
 
 .important{
     display: flex !important;
+}
+
+@media (max-width: 1035px){
+    .post{
+        width: 100%;
+    }
+}
+
+@media (max-width: 750px){
+    .settings{
+        display: block;
+    }
+    .btn-box{
+        align-items: inherit;
+        margin: 0px;
+        height: 120px;
+    }
+    .btn-box label{
+        margin: 0px;
+        width: 100%;
+    }
 }

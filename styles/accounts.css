@@ -24,7 +24,7 @@ p{
 
     background-color: rgba(0, 0, 0, 0.2);
 
-    width: 25vw;
+    min-width: 300px;
 
     cursor: pointer;
     transition: 0.1s ease;
@@ -63,10 +63,15 @@ img{
     flex-wrap: wrap;
 }
 
-.account-list a, .account-list a:hover, .account-list a:focus, .account-list a:active{
+.account-list a, 
+.account-list a:hover, 
+.account-list a:focus, 
+.account-list a:active{
     margin: 10px;
     text-decoration: none;
     color: inherit;
+
+    width: 48%;
 }
 
 .account-list a:hover .account{
@@ -88,4 +93,13 @@ img{
 
 .search::placeholder{
     color: rgb(177, 177, 177);
+}
+
+@media (max-width: 1120px){
+    .account-list a, 
+    .account-list a:hover, 
+    .account-list a:focus, 
+    .account-list a:active{
+        width: 100%;
+    }
 }

@@ -83,11 +83,14 @@ h2{
 .posts .item-container .subject{
     padding-left: 10px;
     width: 85%;
+    overflow: hidden;
 }
 
 .item .subject .title{
     margin: 0;
     margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .item .subject .text{
@@ -136,4 +139,16 @@ h2{
 
 .user a img{
     height: 75px;
+}
+
+@media (max-width: 500px){
+    .details{
+        display: none;
+    }
+}
+
+@media (max-width: 600px){
+    .item .subject .title{
+        white-space: nowrap;
+    }
 }

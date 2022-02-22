@@ -48,17 +48,27 @@
 
 .item .subject{
     width: 100%;
+
+    overflow: hidden;
 }
 
 .item .subject .title{
     margin: 0;
     margin-top: 5px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .item .subject .text{
     margin-top: 5px;
 
     color: rgba(255, 255, 255, 0.6);
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .horizontal{
@@ -80,6 +90,8 @@
     /* align-items: center; */
     text-align: center;
     justify-content: center;
+
+    min-width: 95px;
 }
 
 .details p{
@@ -92,4 +104,16 @@
 
 .details .date{
     color:darkgrey
+}
+
+@media (max-width: 720px){
+    .details{
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 600px){
+    .details{
+        display: none;
+    }
 }

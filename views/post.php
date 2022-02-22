@@ -86,11 +86,6 @@
                         echo '<div class="deleted">';
                         echo 'This comment was deleted by a moderator!';
                         echo '</div>';
-                        echo "<p class='post-creation-date'>Posted in: ";
-                        echo getCommentCreationDate($result[$key]['creation_date']);
-                        echo " at ";
-                        echo getCommentCreationTime($result[$key]['creation_date']);
-                        echo "</p>";
                     }
                 ?> 
                 </div>
@@ -131,11 +126,6 @@
                         echo '<div class="deleted">';
                         echo '<p class="deleted-text">This comment was deleted by a moderator!</p>';
                         echo '</div>';
-                        echo "<p class='post-creation-date'>Posted in: ";
-                        echo getCommentCreationDate($result[$key]['creation_date']);
-                        echo " at ";
-                        echo getCommentCreationTime($result[$key]['creation_date']);
-                        echo "</p>";
                     }
                 ?>                       
                 </div>

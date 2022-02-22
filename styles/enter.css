@@ -22,8 +22,6 @@ h2{
     margin: 60px 80px 0 80px;
     padding: 40px;
 
-    height: 70vh;
-
     display: flex;
     justify-content:space-around;
 
@@ -31,8 +29,19 @@ h2{
     border-radius: 10px;
 }
 
+.form-container{
+    width: 100%;
+    /* overflow: hidden; */
+}
+
+.form-inner{
+    width: 100%;
+    display: flex;
+    transition: 0.4s ease;
+}
+
 .sign-up, .login{
-    width: 50%;
+    width: 100%;
 
     /* padding: 40px; */
 
@@ -103,6 +112,8 @@ img{
 
     border-radius: 10px;
     object-fit: cover;
+    background-image: url('../imgs/trees.jpg');
+    background-position: center;
 }
 
 a{
@@ -121,4 +132,32 @@ a:hover{
     font-weight: 600;
 
     color: red;
+}
+
+@media (max-width: 1000px){
+    img{
+        background-position: 500px;
+    }
+}
+
+@media (max-width: 800px){
+    .slider{
+        display: none;
+    }
+    .field{
+        width: 80%;
+    }
+    
+    .signup, .login{
+        width: 100%;
+    }
+    
+    .form-container{
+        overflow:hidden;
+    }
+    
+    .form-inner{
+        display: flex;
+        width: 200%;
+    }
 }

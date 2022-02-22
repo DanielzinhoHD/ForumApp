@@ -399,3 +399,45 @@ textarea{
         background-color: rgba(255, 255, 255, 0.04);
     }
 }
+
+@media (max-width: 750px){
+    .owner-pic img, .respondent-pic img{
+        width: 115px;
+        height: 115px;
+    }
+}
+
+@media (max-width: 600px){
+    .container{
+        margin: 30px;
+    }
+    .owner-pic img, .respondent-pic img{
+        width: 80px;
+        height: 80px;
+    }
+    .creation-date{
+        display: none;
+    }
+    .text textarea{
+        margin: 35px 0px;
+    }
+    .deleted{
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 550px){
+    .text textarea{
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 400px){
+    .post-creation-date{
+        display: none;
+    }
+
+    .text textarea{
+        margin: 0;
+    }
+}

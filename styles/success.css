@@ -31,3 +31,9 @@ h2{
 .link:hover{
     text-decoration: underline;
 }
+
+@media (max-width: 600px){
+    .container h2{
+        padding: 20px;
+    }
+}

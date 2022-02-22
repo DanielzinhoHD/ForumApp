@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,16 +15,13 @@
     <link rel="stylesheet" href="./styles/defaults.css">
     <link rel="stylesheet" href="./styles/index.css">
     <title>Home</title>
-
 </head>
 
 <?php 
     session_start();
     if(isset($_SESSION['deleted'])){
         if($_SESSION['deleted'] === 1){
-
             header("location: ./includes/logout.inc.php");
-
         }
     }
 ?>
@@ -34,12 +29,16 @@
 <body>
 
     <nav>
-        <div class="nav-bg"></div>
+    <div class="nav-bg"></div>
+    <div class="nav-container">
+        <div class="nav-icon"><a href="./index.php"><i class="far fa-newspaper"></i></a></div>
+
         <ul>
-            <li><a href="./index.php"><i class="far fa-newspaper"></i></a></li>
             <li><a href="./index.php">Home</a></li>
             <li>
-                <a href="">Topics</a>
+                <label for="topics">Topics</label>
+                <input type="checkbox" id="topics">
+
                 <div class="topic-list">
                     <?php 
                         include_once './includes/dbh.inc.php';
@@ -56,7 +55,9 @@
             <li>
                 <?php 
                     if(isset($_SESSION['id'])){
-                        echo '<a href="">'.ucfirst($_SESSION['name']).'</a>';
+                        echo '<label for="dropdown">'.ucfirst($_SESSION['name']).'</label>';
+                        echo '<input type="checkbox" id="dropdown">';
+
                         echo '<div class="dropdown">
                             <a href="./views/add-post.php">Create post</a>';
                         if($_SESSION['adm'] === 0){
@@ -79,9 +80,13 @@
                 </form>
                 <div class="navbar-suggestions"></div>
             </li>
-        </ul>
+            <li class="bars">
+                <i class="fa fa-bars"></i>
+            </li>
+        </ul>        
+    </div>
     </nav>
-    <script src="./scripts/searchbar.js"></script>
+    <script src="./scripts/navbar.js"></script>
 
 
     <div class="offset">

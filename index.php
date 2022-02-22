@@ -11,6 +11,7 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
     crossorigin="anonymous">
     </script> 
+
     <link rel="stylesheet" href="./styles/defaults.css">
     <link rel="stylesheet" href="./styles/index.css">
     <title>Home</title>
@@ -26,6 +27,7 @@
 ?>
 
 <body>
+
     <nav>
     <div class="nav-bg"></div>
     <div class="nav-container">
@@ -36,6 +38,7 @@
             <li>
                 <label for="topics">Topics</label>
                 <input type="checkbox" id="topics">
+
                 <div class="topic-list">
                     <?php 
                         include_once './includes/dbh.inc.php';
@@ -54,6 +57,7 @@
                     if(isset($_SESSION['id'])){
                         echo '<label for="dropdown">'.ucfirst($_SESSION['name']).'</label>';
                         echo '<input type="checkbox" id="dropdown">';
+
                         echo '<div class="dropdown">
                             <a href="./views/add-post.php">Create post</a>';
                         if($_SESSION['adm'] === 0){
@@ -79,12 +83,11 @@
             <li class="bars">
                 <i class="fa fa-bars"></i>
             </li>
-        </ul>
-
-        
+        </ul>        
     </div>
     </nav>
     <script src="./scripts/navbar.js"></script>
+
 
     <div class="offset">
     
